@@ -1,0 +1,35 @@
+.dayInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .dayGraph {
+    width: 100%;
+    overflow-x: scroll;
+    .hourBox {
+      width: 1200px;
+      display: flex;
+      margin-bottom: 15px;
+    }
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    img {
+      width: 15px;
+      height: 15px;
+      margin-right: 10px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
+}

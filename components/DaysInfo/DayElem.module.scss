@@ -1,0 +1,23 @@
+.DayElem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .dayText {
+    font-size: 14px;
+  }
+  .dayInfo {
+    display: flex;
+    align-items: center;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    span {
+      font-size: 14px;
+    }
+    span + span {
+      margin-left: 10px;
+    }
+  }
+}
