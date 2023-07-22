@@ -11,7 +11,7 @@ const BurgerMenu: FC = () => {
       <CloseBtn className={s.closeBtn} />
       <ul className={s.list}>
         {links.map((link) => (
-          <PageLink href={link.href} className={s.pageLink}>
+          <PageLink key={link.text} href={link.href} className={s.pageLink}>
             {link.text}
           </PageLink>
         ))}
