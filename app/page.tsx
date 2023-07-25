@@ -1,13 +1,5 @@
-import { About, AirQuality, DayInfo, DaysInfo, NowInfo } from '@/components';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <main>
-      <NowInfo />
-      <DayInfo />
-      <DaysInfo />
-      <AirQuality />
-      <About />
-    </main>
-  );
+export default function Redirect() {
+  redirect('/ru/samara');
 }

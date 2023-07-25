@@ -40,6 +40,7 @@
         width: 40px;
       }
       span {
+        text-align: end;
         font-size: 12px;
       }
     }
@@ -54,6 +55,12 @@
     }
     span + span {
       margin-left: 10px;
+    }
+
+    .wind {
+      span {
+        text-align: center;
+      }
     }
   }
 }
