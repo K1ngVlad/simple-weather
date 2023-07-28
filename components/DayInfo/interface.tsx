@@ -1,4 +1,5 @@
 interface dayInfoInterface {
+  localtime: string;
   dayInfo: {
     time: string;
     temp_c: number;

@@ -1,14 +1,13 @@
 const getAssessment = (index: number) => {
-  if (index < 25) {
-    return 'Очень хорошее';
-  } else if (index < 50) {
-    return 'Хорошее';
-  } else if (index < 75) {
-    return 'Среднее';
-  } else if (index < 100) {
-    return 'Плохое';
+  if (index < 4) {
+    return 'Низкое';
+  } else if (index < 7) {
+    return 'Умеренное';
+  } else if (index < 10) {
+    return 'Высокое';
+  } else {
+    return 'Очень высокое';
   }
-  return 'Очень плохое';
 };
 
 export { getAssessment };

@@ -30,16 +30,17 @@ const NowInfo: FC<props> = (props) => {
 
   const date = new Date(localtime);
 
-  console.log(date.getDay());
+  const hours = String(date.getHours());
+  const minutes = String(date.getMinutes());
 
   return (
     <section className={s.nowInfo}>
       <div className={s.box}>
         <div className={s.date}>
           <span className={s.day}>{week[date.getDay()]}</span>
-          <span
-            className={s.time}
-          >{`${date.getHours()}:${date.getMinutes()}`}</span>
+          <span className={s.time}>{`${
+            hours.length === 2 ? hours : `0${hours}`
+          }:${minutes.length === 2 ? minutes : `0${minutes}`}`}</span>
         </div>
         <div className={s.temp}>{temp_c}</div>
         <div className={s.weather}>
@@ -49,8 +50,8 @@ const NowInfo: FC<props> = (props) => {
       </div>
       <div className={s.info}>
         <div className={s.picks}>
-          <span>{`Макс: ${maxtemp_c}`}</span>
-          <span>{`Макс: ${mintemp_c}`}</span>
+          <span>{`Макс: ${maxtemp_c}°`}</span>
+          <span>{`Макс: ${mintemp_c}°`}</span>
         </div>
         <div className={s.wind}>
           <span>{`Ветер: ${dirs.get(wind_dir)} ${wind_kph} км/ч`}</span>

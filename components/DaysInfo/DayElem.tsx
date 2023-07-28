@@ -17,8 +17,10 @@ const DayElem: FC<props> = (props) => {
       <span className={s.dayText}>{text}</span>
       <div className={s.dayInfo}>
         <img alt={condition} src={icon} />
-        <span>{condition}</span>
-        <span>{`${max}° / ${min}°`}</span>
+        <span className={s.condition}>
+          {condition.length < 9 ? condition : `${condition.slice(0, 7)}...`}
+        </span>
+        <span className={s.temp}>{`${max}° / ${min}°`}</span>
       </div>
     </div>
   );

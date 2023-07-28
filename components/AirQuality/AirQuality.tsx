@@ -11,22 +11,23 @@ interface props {
 }
 
 const AirQuality: FC<props> = (props) => {
-  const { no2, pm10, o3 } = props.air_quality;
+  // const { no2, pm10, o3 } = props.air_quality;
+  const index = props.air_quality['gb-defra-index'];
 
-  const index = Math.round(Math.max(no2, pm10, o3));
+  const percentIndex = (index / 10) * 100;
 
   return (
     <section className={s.airQuality}>
       <div className={s.top}>
         <Image src={bubble} alt="Air quality" />
-        <h3>Качество воздуха</h3>
+        <h3>{'Загрязнение воздуха (DAQ)'}</h3>
       </div>
       <div className={s.quality}>{`${getAssessment(index)} ${index}`}</div>
       <div className={s.bar}>
         <div
           className={s.ball}
           style={{
-            left: `${(index / 150) * 100}%`,
+            left: `${percentIndex < 10 ? percentIndex : 10}%`,
           }}
         ></div>
       </div>

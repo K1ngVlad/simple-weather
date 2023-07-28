@@ -8,20 +8,22 @@ import s from './HourElem.module.scss';
 interface props {
   time: string;
   probality: number;
+  condition: {
+    text: string;
+    icon: string;
+    code: number;
+  };
 }
 
 const HourElem: FC<props> = (props) => {
+  const { time, probality, condition } = props;
   return (
     <div className={s.hourElem}>
-      <span className={s.time}>{props.time}</span>
-      <img
-        className={s.icon}
-        alt="Облачно"
-        src="//cdn.weatherapi.com/weather/64x64/day/116.png"
-      />
+      <span className={s.time}>{time}</span>
+      <img className={s.icon} alt={condition.text} src={condition.icon} />
       <div className={s.probality}>
         <Image src={umbrella} alt="probality" />
-        <span>{`${props.probality}%`}</span>
+        <span>{`${probality}%`}</span>
       </div>
     </div>
   );

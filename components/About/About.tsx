@@ -1,9 +1,10 @@
 import { FC } from 'react';
-
-import s from './About.module.scss';
 import { info } from './constants';
 import { InfoElem } from './InfoElem';
 import { SunInfo } from './SunInfo';
+import { getAssessment } from './helpers';
+
+import s from './About.module.scss';
 
 interface props {
   feelslike_c: number;
@@ -34,7 +35,7 @@ const About: FC<props> = (props) => {
     `${feelslike_c} °`,
     `${wind_kph} км/ч`,
     `${humidity} %`,
-    `${uv}`,
+    `${uv} ${getAssessment(uv)}`,
     `${vis_km} км`,
     `${
       pressure_mb < 1000

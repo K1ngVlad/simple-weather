@@ -13,7 +13,7 @@ const info = [
   },
   {
     img: wind,
-    name: 'Ветер юго-западный',
+    name: 'Ветер',
     value: '19 км/ч',
   },
   {

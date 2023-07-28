@@ -5,7 +5,7 @@ import sunset from '@/assets/sunset.svg';
 
 import s from './SunInfo.module.scss';
 import Image from 'next/image';
-import { validateDate } from './helpers/validateDate';
+import { validateDate } from './helpers';
 
 interface props {
   sunrise: string;
@@ -26,14 +26,18 @@ const SunInfo: FC<props> = (props) => {
     Number(currentTime.slice(0, 2)) * 60 + Number(currentTime.slice(3, 5));
 
   const timeIndex =
-    (currentMinutes - sunriseMinutes) / (sunsetMinutes - sunriseMinutes);
+    currentMinutes < 720
+      ? (currentMinutes - sunriseMinutes) / (720 - sunriseMinutes)
+      : (currentMinutes - 720) / (sunsetMinutes - 720);
 
   const botIndex = 4.3;
   const topIndex = 1.3;
+  const midIndex = 2;
 
-  const index = botIndex - (botIndex - topIndex) * timeIndex;
-
-  console.log(index);
+  const index =
+    currentMinutes < 720
+      ? botIndex - (botIndex - midIndex) * timeIndex
+      : midIndex - (midIndex - topIndex) * timeIndex;
 
   return (
     <div className={s.sunInfo}>

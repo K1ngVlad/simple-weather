@@ -8,17 +8,20 @@
   .dayInfo {
     display: flex;
     align-items: center;
-    width: 180px;
+    // width: 200px;
     img {
       width: 30px;
       height: 30px;
-      margin-right: 10px;
     }
-    span {
+    font-size: 14px;
+    .condition {
+      text-align: end;
+      width: 76px;
+    }
+    .temp {
+      width: 76px;
       font-size: 14px;
-    }
-    span + span {
-      margin-left: 10px;
+      text-align: end;
     }
   }
 }

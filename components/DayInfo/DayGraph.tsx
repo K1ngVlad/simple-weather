@@ -6,6 +6,7 @@ import { Canvas } from './Сanvas';
 interface props {
   className: string;
   hourClassName: string;
+  localtime: string;
   dayInfo: {
     time: string;
     temp_c: number;
@@ -19,7 +20,7 @@ interface props {
 }
 
 const DayGraph: FC<props> = (props) => {
-  const { className, hourClassName, dayInfo } = props;
+  const { className, hourClassName, dayInfo, localtime } = props;
   return (
     <div className={className}>
       <div className={hourClassName}>
@@ -28,10 +29,11 @@ const DayGraph: FC<props> = (props) => {
             key={hour.time}
             time={hour.time.slice(-5, hour.time.length)}
             probality={hour.chance_of_rain}
+            condition={hour.condition}
           />
         ))}
       </div>
-      <Canvas dayInfo={dayInfo} />
+      <Canvas localtime={localtime} dayInfo={dayInfo} />
     </div>
   );
 };

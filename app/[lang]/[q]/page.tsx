@@ -1,3 +1,4 @@
+import { getData } from '@/api';
 import {
   About,
   AirQuality,
@@ -6,7 +7,6 @@ import {
   Header,
   NowInfo,
 } from '@/components';
-// import { useData } from '@/hooks';
 import { Weather } from '@/interfaces';
 
 interface Props {
@@ -20,17 +20,6 @@ interface params {
   lang: string;
   q: string;
 }
-
-const getData = async ({ lang, q }: params) => {
-  const apiKey = process.env.REACT_APP_API_KEY;
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${q}&days=3&aqi=yes&alerts=yes&lang=${lang}`;
-  const response = await fetch(url, {
-    next: {
-      revalidate: 60,
-    },
-  });
-  return response.json();
-};
 
 export default async function Home({ params }: Props) {
   const data: Weather = await getData(params);
@@ -51,14 +40,14 @@ export default async function Home({ params }: Props) {
 
   const { maxtemp_c, mintemp_c } = data.forecast.forecastday[0].day;
 
-  const dayInfo = data.forecast.forecastday[0].hour.map(
-    ({ time, temp_c, condition, chance_of_rain }) => ({
+  const dayInfo = data.forecast.forecastday[0].hour
+    .concat(data.forecast.forecastday[1].hour)
+    .map(({ time, temp_c, condition, chance_of_rain }) => ({
       time,
       temp_c,
       condition,
       chance_of_rain,
-    })
-  );
+    }));
 
   const daysInfo = data.forecast.forecastday.map(({ day }) => ({
     maxtemp_c: Math.round(day.maxtemp_c),
@@ -83,7 +72,7 @@ export default async function Home({ params }: Props) {
         maxtemp_c={maxtemp_c}
         mintemp_c={mintemp_c}
       />
-      <DayInfo dayInfo={dayInfo} />
+      <DayInfo localtime={localtime} dayInfo={dayInfo} />
       <DaysInfo daysInfo={daysInfo} />
       <AirQuality air_quality={air_quality} />
       <About
