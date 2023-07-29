@@ -14,6 +14,8 @@ const Reg: FC<props> = ({ apiKey }) => {
   const { nav, setNav } = useNav();
   const { lat, lon, loading, region } = nav;
 
+  console.log(apiKey);
+
   useEffect(() => {
     if (window?.navigator?.geolocation && apiKey) {
       navigator.geolocation.getCurrentPosition(async ({ coords }) => {
