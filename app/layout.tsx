@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Погода',
   description: 'Погода на сегодня!',
+  viewport:
+    'width=device-width, initial-scale=1.0, viewport-fit=cover maximum-scale=1',
+  keywords: 'weather, погода',
 };
 
 export default function RootLayout({

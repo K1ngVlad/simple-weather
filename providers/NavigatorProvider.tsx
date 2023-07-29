@@ -18,7 +18,7 @@ const NavigatorContext = createContext<nav>({
   nav: {
     lat: null,
     lon: null,
-    region: 'Moscow',
+    region: 'Москва',
     loading: true,
   },
   setNav: () => {},
@@ -32,7 +32,7 @@ const NavigatorProvider: FC<props> = (props) => {
   const [nav, setNav] = useState({
     lat: null,
     lon: null,
-    region: 'Moscow',
+    region: 'Москва',
     loading: true,
   });
 
