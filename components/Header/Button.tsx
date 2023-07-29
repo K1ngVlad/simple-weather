@@ -13,8 +13,6 @@ interface props {
 const Button: FC<props> = (props) => {
   const { openBurger } = useContext(BurgerContext);
 
-  console.log(openBurger);
-
   return (
     <button onClick={openBurger} className={props.className}>
       <Image priority src={burger} alt="Open burger-menu" />

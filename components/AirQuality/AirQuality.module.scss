@@ -23,28 +23,43 @@
     margin-top: 20px;
     width: 100%;
     height: 6px;
-    background: rgb(23, 200, 105);
+    background: rgb(204, 255, 204);
     background: linear-gradient(
       90deg,
-      rgba(23, 200, 105, 1) 0%,
-      rgba(235, 192, 31, 1) 14%,
-      rgba(255, 139, 77, 1) 28%,
-      rgba(232, 83, 53, 1) 42%,
-      rgba(188, 74, 134, 1) 56%,
-      rgba(173, 82, 230, 1) 70%,
-      rgba(221, 108, 149, 1) 85%,
-      rgba(250, 124, 102, 1) 100%
+      rgba(204, 255, 204, 1) 0%,
+      rgba(102, 255, 102, 1) 20%,
+      rgba(0, 255, 0, 1) 30%,
+      rgba(153, 255, 0, 1) 40%,
+      rgba(255, 255, 0, 1) 50%,
+      rgba(255, 204, 0, 1) 60%,
+      rgba(255, 102, 0, 1) 70%,
+      rgba(255, 51, 0, 1) 80%,
+      rgba(255, 0, 0, 1) 90%,
+      rgba(255, 0, 102, 1) 100%
     );
+
+    // background: rgb(23, 200, 105);
+    // background: linear-gradient(
+    //   90deg,
+    //   rgba(23, 200, 105, 1) 0%,
+    //   rgba(235, 192, 31, 1) 14%,
+    //   rgba(255, 139, 77, 1) 28%,
+    //   rgba(232, 83, 53, 1) 42%,
+    //   rgba(188, 74, 134, 1) 56%,
+    //   rgba(173, 82, 230, 1) 70%,
+    //   rgba(221, 108, 149, 1) 85%,
+    //   rgba(250, 124, 102, 1) 100%
+    // );
     border-radius: 20px;
     .ball {
       position: absolute;
       top: 50%;
-      left: 32%;
       transform: translate(-50%, -50%);
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: white;
+      box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
     }
   }
 }

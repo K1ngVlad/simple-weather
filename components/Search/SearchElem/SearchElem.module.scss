@@ -1,0 +1,17 @@
+.searchElem {
+  margin-top: 20px;
+  width: 280px;
+}
+
+.searchElem + .searchElem {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0%;
+    top: -10px;
+    height: 1px;
+    background: rgba(256, 256, 256, 0.5);
+  }
+}
