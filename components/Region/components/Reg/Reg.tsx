@@ -31,9 +31,7 @@ const Reg: FC<props> = ({ apiKey }) => {
     }
   }, []);
 
-  return (
-    <h3 className={s.regionChange}>{`${loading ? 'Подождите...' : region}`}</h3>
-  );
+  return <h3 className={s.regionChange}>{`${loading ? 'Москва' : region}`}</h3>;
 };
 
 export { Reg };
