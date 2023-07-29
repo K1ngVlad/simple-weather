@@ -9,4 +9,13 @@
   font-weight: bold;
   color: white;
   margin-top: 50px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  &::after {
+    background: rgb(86, 165, 86);
+  }
+  &::before {
+    background: rgb(1, 119, 1);
+  }
 }

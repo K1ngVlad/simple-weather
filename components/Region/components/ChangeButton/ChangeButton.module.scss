@@ -1,5 +1,5 @@
 .changeButton {
-  background: rgb(117, 139, 117);
+  background: none;
   border: none;
   outline: none;
   cursor: pointer;
@@ -10,4 +10,13 @@
   color: white;
   word-wrap: break-word;
   margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  &::after {
+    background: rgb(117, 139, 117);
+  }
+  &::before {
+    background: rgb(26, 65, 26);
+  }
 }
