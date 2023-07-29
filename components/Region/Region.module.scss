@@ -1,12 +1,14 @@
 .region {
   width: 100vw;
+  // height: 100vh;
   height: calc(100% - env(safe-area-inset-top));
   padding-top: env(safe-area-inset-top);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
   border-radius: 0;
 }
 
