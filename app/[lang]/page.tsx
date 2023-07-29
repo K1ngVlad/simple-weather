@@ -1,3 +1,4 @@
+import { Region } from '@/components';
 import { redirect } from 'next/navigation';
 
 interface Props {
@@ -6,6 +7,11 @@ interface Props {
   };
 }
 
-export default function Redirect(props: Props) {
-  redirect(`/${props.params.lang}/samara`);
+export default function ChoiseRegion(props: Props) {
+  // redirect(`/${props.params.lang}/samara`);
+  return (
+    <main className="change">
+      <Region lang={props.params.lang} />
+    </main>
+  );
 }

@@ -52,7 +52,7 @@ export default async function Home({ params }: Props) {
   const daysInfo = data.forecast.forecastday.map(({ day }) => ({
     maxtemp_c: Math.round(day.maxtemp_c),
     mintemp_c: Math.round(day.mintemp_c),
-    condition: condition,
+    condition: day.condition,
   }));
 
   const { air_quality } = data.current;

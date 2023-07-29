@@ -1,3 +1,4 @@
+import { NavigatorProvider } from '@/providers';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -5,8 +6,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Simple weather',
-  description: 'Weather for today!',
+  title: 'Погода',
+  description: 'Погода на сегодня!',
 };
 
 export default function RootLayout({
@@ -15,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ru">
+      <body className={inter.className}>
+        <NavigatorProvider>{children}</NavigatorProvider>
+      </body>
     </html>
   );
 }

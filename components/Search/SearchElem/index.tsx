@@ -1,0 +1,1 @@
+export { SearchElem } from './SearchElem';

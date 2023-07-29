@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import s from './NowInfo.module.scss';
-import { dirs, week } from './constants';
+import { dirs, months, week } from './constants';
 
 interface props {
   localtime: string;
@@ -32,12 +32,17 @@ const NowInfo: FC<props> = (props) => {
 
   const hours = String(date.getHours());
   const minutes = String(date.getMinutes());
+  const day = String(date.getDay());
 
   return (
     <section className={s.nowInfo}>
       <div className={s.box}>
         <div className={s.date}>
-          <span className={s.day}>{week[date.getDay()]}</span>
+          <span className={s.day}>
+            {`${week[date.getDay()]} ${day.length === 2 ? day : `0${day}`}
+            ${months[date.getMonth()]} `}
+            <br /> {` ${date.getFullYear()}.`}
+          </span>
           <span className={s.time}>{`${
             hours.length === 2 ? hours : `0${hours}`
           }:${minutes.length === 2 ? minutes : `0${minutes}`}`}</span>

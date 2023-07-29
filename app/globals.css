@@ -27,6 +27,12 @@ main {
   padding: 50px 10px 10px 10px;
 }
 
+.change {
+  padding: 0;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+}
+
 section {
   width: 100%;
   padding: 10px;
