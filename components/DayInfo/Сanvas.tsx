@@ -28,7 +28,7 @@ const Canvas: FC<dayInfoInterface> = ({ dayInfo }) => {
         const x = i * xStep + 25 * 2;
         const y = (maxTemp - hour.temp_c) * yStep + 20 * 2;
         ctx.lineTo(x, y);
-        ctx.fillText(`${hour.temp_c}°`, x - 10, y - 10);
+        ctx.fillText(`${hour.temp_c}°`, x - 20, y - 10);
       });
       ctx.stroke();
       ctx.lineTo(1175 * 2, 80 * 2);

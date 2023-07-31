@@ -67,6 +67,7 @@
         z-index: -1;
         border-radius: inherit;
       }
+
       .sun {
         width: 20px;
         height: 20px;
@@ -80,6 +81,41 @@
         box-shadow: 0 0 10px 3px rgba(249, 166, 48, 1);
         position: absolute;
         transform: translate(50%, 50%);
+      }
+      .moon {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(50%, 50%);
+        overflow: hidden;
+        &::after {
+          content: '';
+          position: absolute;
+          right: -2px;
+          top: 5px;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          width: 14px;
+          height: 14px;
+          box-shadow: 0px 0px 0px 2000px #c6dce7;
+        }
+      }
+    }
+    .night {
+      background: rgb(48, 56, 65, 0.7);
+      // background: linear-gradient(
+      //   0deg,
+      //   rgba(48, 56, 65, 0.7) 82.5%,
+      //   rgba(62, 193, 211, 0.7) 100%
+      // );
+      &::after {
+        // background: none;
+        opacity: 0.3;
+        top: -1px;
+        bottom: -1px;
+        right: -1px;
+        left: -1px;
       }
     }
   }

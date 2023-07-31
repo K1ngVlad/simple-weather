@@ -8,6 +8,7 @@ import {
   NowInfo,
 } from '@/components';
 import { Weather } from '@/interfaces';
+import { SaveRegion } from './SaveRegion';
 
 interface Props {
   params: {
@@ -61,8 +62,9 @@ export default async function Home({ params }: Props) {
 
   return (
     <main>
+      <SaveRegion q={params.q} />
       <div className="background"></div>
-      <Header name={name} country={country} />
+      <Header lang={params.lang} name={name} country={country} />
       <NowInfo
         localtime={localtime}
         condition={condition}

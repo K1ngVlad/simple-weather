@@ -1,0 +1,24 @@
+.loading {
+  width: 100%;
+  height: calc(100vh - env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  img {
+    width: 200px;
+    height: 200px;
+    animation: rotate infinite linear 0.2s;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}

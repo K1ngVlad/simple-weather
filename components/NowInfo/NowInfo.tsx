@@ -32,7 +32,7 @@ const NowInfo: FC<props> = (props) => {
 
   const hours = String(date.getHours());
   const minutes = String(date.getMinutes());
-  const day = String(date.getDay());
+  const day = String(date.getDate());
 
   return (
     <section className={s.nowInfo}>

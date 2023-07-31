@@ -7,3 +7,4 @@ export { AirQuality } from './AirQuality';
 export { About } from './About';
 export { Region } from './Region';
 export { Search } from './Search';
+export { Loading } from './Loading';

@@ -39,19 +39,34 @@ const SunInfo: FC<props> = (props) => {
       ? botIndex - (botIndex - midIndex) * timeIndex
       : midIndex - (midIndex - topIndex) * timeIndex;
 
+  const day =
+    currentMinutes < sunsetMinutes && currentMinutes >= sunriseMinutes;
+
   return (
     <div className={s.sunInfo}>
       <div className={s.container}>
         <Image className={s.sunrise} src={sunrise} alt="sunrise" />
         <Image className={s.sunset} src={sunset} alt="sunset" />
-        <div className={s.horison}>
-          <div
-            style={{
-              bottom: `${150 + 150 * Math.sin(Math.PI / index)}px`,
-              right: `${150 + 150 * Math.cos(Math.PI / index)}px`,
-            }}
-            className={s.sun}
-          ></div>
+        <div className={`${s.horison} ${!day ? s.night : ''}`}>
+          {day && (
+            <div
+              style={{
+                bottom: `${150 + 150 * Math.sin(Math.PI / index)}px`,
+                right: `${150 + 150 * Math.cos(Math.PI / index)}px`,
+              }}
+              className={s.sun}
+            ></div>
+          )}
+
+          {!day && (
+            <div
+              style={{
+                bottom: `${150 + 150 * Math.sin(Math.PI / midIndex)}px`,
+                right: `${150 + 150 * Math.cos(Math.PI / midIndex)}px`,
+              }}
+              className={s.moon}
+            ></div>
+          )}
         </div>
       </div>
       <div className={s.time}>

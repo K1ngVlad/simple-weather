@@ -11,8 +11,8 @@ const DayInfo: FC<dayInfoInterface> = (props) => {
   const { dayInfo, localtime } = props;
 
   const index = dayInfo.findIndex(({ time }) => {
-    const localHours = localtime.slice(-5, -3);
-    const timeHours = time.slice(-5, -3);
+    const localHours = Number(localtime.slice(-5, -3));
+    const timeHours = Number(time.slice(-5, -3));
     return localHours === timeHours;
   });
 

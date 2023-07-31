@@ -14,7 +14,7 @@ const Region: FC<props> = ({ lang }) => {
   return (
     <section className={s.region}>
       <h2 className={s.title}>Ваш регион:</h2>
-      <Reg apiKey={apiKey} />
+      <Reg lang={lang} apiKey={apiKey} />
       <AgreeButton lang={lang} />
       <ChangeButton lang={lang} />
     </section>

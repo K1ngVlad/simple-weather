@@ -1,5 +1,6 @@
 import { Region } from '@/components';
 import { redirect } from 'next/navigation';
+import { SaveLang } from './SaveLang';
 
 interface Props {
   params: {
@@ -8,10 +9,12 @@ interface Props {
 }
 
 export default function ChoiseRegion(props: Props) {
-  // redirect(`/${props.params.lang}/samara`);
+  const lang = props.params.lang;
   return (
     <main className="change">
-      <Region lang={props.params.lang} />
+      <SaveLang lang={lang}>
+        <Region lang={lang} />
+      </SaveLang>
     </main>
   );
 }
