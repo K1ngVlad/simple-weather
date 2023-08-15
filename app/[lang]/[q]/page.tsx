@@ -62,32 +62,34 @@ export default async function Home({ params }: Props) {
 
   return (
     <main>
-      <SaveRegion q={params.q} />
-      <div className="background"></div>
-      <Header lang={params.lang} name={name} country={country} />
-      <NowInfo
-        localtime={localtime}
-        condition={condition}
-        wind_kph={wind_kph}
-        temp_c={temp_c}
-        wind_dir={wind_dir}
-        maxtemp_c={maxtemp_c}
-        mintemp_c={mintemp_c}
-      />
-      <DayInfo localtime={localtime} dayInfo={dayInfo} />
-      <DaysInfo daysInfo={daysInfo} />
-      <AirQuality air_quality={air_quality} />
-      <About
-        localtime={localtime}
-        feelslike_c={feelslike_c}
-        wind_kph={wind_kph}
-        humidity={humidity}
-        uv={uv}
-        vis_km={vis_km}
-        pressure_mb={pressure_mb}
-        sunrise={sunrise}
-        sunset={sunset}
-      />
+      <div className="container">
+        <SaveRegion q={params.q} />
+        <div className="background"></div>
+        <Header lang={params.lang} name={name} country={country} />
+        <NowInfo
+          localtime={localtime}
+          condition={condition}
+          wind_kph={wind_kph}
+          temp_c={temp_c}
+          wind_dir={wind_dir}
+          maxtemp_c={maxtemp_c}
+          mintemp_c={mintemp_c}
+        />
+        <DayInfo localtime={localtime} dayInfo={dayInfo} />
+        <DaysInfo daysInfo={daysInfo} />
+        <AirQuality air_quality={air_quality} />
+        <About
+          localtime={localtime}
+          feelslike_c={feelslike_c}
+          wind_kph={wind_kph}
+          humidity={humidity}
+          uv={uv}
+          vis_km={vis_km}
+          pressure_mb={pressure_mb}
+          sunrise={sunrise}
+          sunset={sunset}
+        />
+      </div>
     </main>
   );
 }
